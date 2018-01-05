@@ -5,8 +5,9 @@
 <title>AngularJS Demo</title>
 <script src="lib/angular.min.js"></script>
 <script src="js/angulardemo.js"></script>
+<script src="js/colorPickerApp.js"></script>
 </head>
-<body>
+<body ng-init="r=255, g=0; b=123; a=0.7">
    <div ng-controller="demoCtrl">
         <table border="1">
         <thead>
@@ -29,7 +30,24 @@
     {{now | date:'dd. MMM yyyy'}} <br>
     And the time is:
     {{now | date:'HH:mm:ss'}} <br> <br>
-    {{ 'This is an example for a long long test' | truncate:18 }}
+    {{ 'This is an example for a long long test' | truncate:25 }}
     </div>
+    R:<input input="range"
+	min="0" max="255" step="1"
+	ng-model="r"><br>
+R:<input input="range"
+	min="0" max="255" step="1"
+	ng-model="r"><br>
+R:<input input="range"
+	min="0" max="255" step="1"
+	ng-model="r"><br>
+R:<input input="range"
+	min="0" max="255" step="1"
+	ng-model="r"><br>
+
+<div style="width: 300px; height: 100px; 
+	background-color: rgba({{ r }}, {{ g }}, {{ b }}, {{ a }});">
+</div>
+
 </body>
 </html>
