@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="demoApp">
+<head>
+<meta charset="UTF-8">
+<title>AngularJS Demo</title>
+<script src="lib/angular.min.js"></script>
+<script src="js/angulardemo.js"></script>
+</head>
+<body>
+   <div ng-controller="demoCtrl">
+        <table border="1">
+        <thead>
+	        <tr>
+                <td>Book Name</td>
+                <td>Author</td>
+	        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td ng-bind="book"></td>
+                <td ng-bind="author"></td>
+            </tr>
+        </tbody>
+        </table>        
+    </div>
+     <br>
+    <div ng-controller="DateCtrl">
+    Today's date: 
+    {{now | date:'dd. MMM yyyy'}} <br>
+    And the time is:
+    {{now | date:'HH:mm:ss'}} <br> <br>
+    {{ 'This is an example for a long long test' | truncate:18 }}
+    </div>
+</body>
+</html>
